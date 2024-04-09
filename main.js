@@ -1,9 +1,7 @@
 // Crear un servidor con Express en el puerto 3000
 const express = require("express");
 const app = express();
-app.listen(3000, () => {
-    console.log("El servidor está inicializado en el puerto 3000");
-});
+
 // Definir la carpeta "assets" como carpeta pública del servidor
 app.use(express.static("assets"));
 
@@ -50,4 +48,8 @@ app.get('/abracadabra/conejo/:n', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send('Esta página no existe... ')
+});
+
+app.listen(3000, () => {
+    console.log("El servidor está inicializado en el puerto 3000");
 });
